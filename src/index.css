@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+  html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; padding: 0; background-color: #050609; color: #F4F1F4;
+    font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+    overflow-x: hidden; min-height: 100vh; overscroll-behavior-y: none;
+  }
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255, 59, 157, 0.3); border-radius: 4px; }
+  input, textarea, button { font-family: inherit; }
+  input:focus, textarea:focus, button:focus { outline: none; }
+}
+
+@layer components {
+  .glass-card {
+    background: linear-gradient(135deg, rgba(13, 15, 18, 0.9) 0%, rgba(8, 9, 13, 0.95) 100%);
+    backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1rem;
+  }
+  .glass-card-hover { transition: all 0.3s ease; }
+  .glass-card-hover:hover {
+    border-color: rgba(255, 59, 157, 0.3);
+    background: linear-gradient(135deg, rgba(19, 22, 27, 0.9) 0%, rgba(13, 15, 18, 0.95) 100%);
+    transform: translateY(-2px);
+  }
+  .neon-pink-border { border: 1px solid rgba(255, 59, 157, 0.4); box-shadow: 0 0 20px rgba(255, 59, 157, 0.15), inset 0 0 20px rgba(255, 59, 157, 0.05); }
+  .neon-green-border { border: 1px solid rgba(85, 232, 138, 0.4); box-shadow: 0 0 20px rgba(85, 232, 138, 0.15), inset 0 0 20px rgba(85, 232, 138, 0.05); }
+  .neon-gold-border { border: 1px solid rgba(232, 185, 74, 0.4); box-shadow: 0 0 20px rgba(232, 185, 74, 0.15), inset 0 0 20px rgba(232, 185, 74, 0.05); }
+  .text-gradient-pink-gold { background: linear-gradient(135deg, #FF3B9D 0%, #E8B94A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .page-container { min-height: 100vh; min-height: 100dvh; padding-top: 64px; padding-bottom: 80px; max-width: 480px; margin: 0 auto; position: relative; }
+  @media (min-width: 768px) { .page-container { max-width: 640px; } }
+}
+
+@layer utilities {
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
