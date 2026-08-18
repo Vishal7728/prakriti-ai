@@ -2,7 +2,7 @@ import React, { memo, useState } from 'react'
 import { motion } from 'framer-motion'
 
 // Uses the image from your public folder
-const LOCAL_IMAGE = '/prakriti-hero.png' 
+const LOCAL_IMAGE = './prakriti-hero.png'  
 
 function PrakritiHero({ state = 'idle', className = '', style = {} }) {
   const [imgError, setImgError] = useState(false)
