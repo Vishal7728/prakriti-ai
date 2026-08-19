@@ -32,8 +32,7 @@
   .neon-green-border { border: 1px solid rgba(85, 232, 138, 0.4); box-shadow: 0 0 20px rgba(85, 232, 138, 0.15), inset 0 0 20px rgba(85, 232, 138, 0.05); }
   .neon-gold-border { border: 1px solid rgba(232, 185, 74, 0.4); box-shadow: 0 0 20px rgba(232, 185, 74, 0.15), inset 0 0 20px rgba(232, 185, 74, 0.05); }
   .text-gradient-pink-gold { background: linear-gradient(135deg, #FF3B9D 0%, #E8B94A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .page-container { min-height: 100vh; min-height: 100dvh; padding-top: 64px; padding-bottom: 80px; max-width: 480px; margin: 0 auto; position: relative; }
-  @media (min-width: 768px) { .page-container { max-width: 640px; } }
+  .page-container { min-height: 100vh; min-height: 100dvh; padding-top: 72px; padding-bottom: 96px; max-width: 480px; margin: 0 auto; position: relative; }
 }
 
 @layer utilities {

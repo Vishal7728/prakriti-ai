@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Header from './components/navigation/Header.jsx'
 import BottomNavigation from './components/navigation/BottomNavigation.jsx'
@@ -51,6 +51,7 @@ function App() {
   const isVoicePage = location.pathname === '/speak'
   const showHeader = !isWelcomePage && !isVoicePage
   const showBottomNav = !isWelcomePage && !isVoicePage
+  const welcomeDone = useAppStore((s) => s.hasCompletedWelcome)
 
   return (
     <div className="relative min-h-screen bg-prakriti-bg overflow-hidden">
@@ -59,7 +60,8 @@ function App() {
       {showBottomNav && <BottomNavigation />}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Welcome />} />
+          <Route path="/" element={welcomeDone ? <Navigate to="/home" replace /> : <Welcome />} />
+          <Route path="/welcome" element={welcomeDone ? <Navigate to="/home" replace /> : <Welcome />} />
           <Route path="/home" element={<Home />} />
           <Route path="/speak" element={<Speak />} />
           <Route path="/gyan" element={<Gyan />} />
